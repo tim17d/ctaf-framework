@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+
 plugins {
     java
     checkstyle
@@ -16,6 +18,7 @@ val agent: Configuration by configurations.creating {
 }
 
 dependencies {
+    implementation("org.reflections:reflections:0.10.2")
     implementation("com.codeborne:selenide:7.1.0")
     implementation("io.rest-assured:rest-assured:5.4.0")
     implementation("org.postgresql:postgresql:42.7.1")
@@ -30,12 +33,16 @@ dependencies {
 
 }
 
-tasks.compileJava {
-    options.release = 21
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
 }
 
 tasks.test {
     useJUnitPlatform()
+    testLogging.exceptionFormat = TestExceptionFormat.FULL
+    testLogging.showStandardStreams = true
     jvmArgs = listOf(
             "-javaagent:${agent.singleFile}"
     )
