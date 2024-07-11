@@ -4,7 +4,7 @@ plugins {
     java
     checkstyle
     id("io.freefair.lombok") version "8.6"
-    id("io.qameta.allure-report") version "2.11.2"
+    id("io.qameta.allure") version "2.11.2"
 }
 
 group = "com.github.tim17d"
@@ -48,4 +48,5 @@ tasks.test {
     jvmArgs = listOf(
             "-javaagent:${agent.singleFile}"
     )
+    systemProperty("allure.results.directory", "${project.rootDir}/allure-results")
 }
