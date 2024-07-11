@@ -48,5 +48,5 @@ tasks.test {
     jvmArgs = listOf(
             "-javaagent:${agent.singleFile}"
     )
-    systemProperty("allure.results.directory", "${project.rootDir}/allure-results")
+    outputs.upToDateWhen { false }
 }
