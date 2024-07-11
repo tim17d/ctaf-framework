@@ -9,7 +9,7 @@ import com.codeborne.selenide.SelenideElement;
 import java.time.Duration;
 
 @PageObject("Checkboxes")
-public class Checkboxes implements Page {
+public class CheckboxesPage implements Page {
     @Element("Title")
     private SelenideElement title = $x("//h3");
 

@@ -4,7 +4,9 @@ plugins {
     java
     checkstyle
     id("io.freefair.lombok") version "8.6"
+    id("io.qameta.allure-report") version "2.11.2"
 }
+
 group = "com.github.tim17d"
 version = "1.0-SNAPSHOT"
 
@@ -21,7 +23,7 @@ dependencies {
     implementation("org.reflections:reflections:0.10.2")
     implementation("com.codeborne:selenide:7.1.0")
     implementation("io.rest-assured:rest-assured:5.4.0")
-    implementation("org.postgresql:postgresql:42.7.1")
+    implementation("org.springframework:spring-jdbc:6.1.10")
     implementation("ch.qos.logback:logback-core:1.5.0")
     implementation("ch.qos.logback:logback-classic:1.5.0")
     implementation(platform("io.qameta.allure:allure-bom:2.25.0"))
