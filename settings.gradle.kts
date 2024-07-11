@@ -1,2 +1,2 @@
-rootProject.name = "staf-framework"
+rootProject.name = "ctaf-framework"
 
