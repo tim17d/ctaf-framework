@@ -1,10 +1,10 @@
-package resolvers;
+package ui.resolvers;
 
-import annotations.Element;
+import ui.annotations.Element;
 import com.codeborne.selenide.SelenideElement;
 import exceptions.CTAFException;
 import lombok.SneakyThrows;
-import pages.Page;
+import ui.pages.Page;
 
 import java.util.Arrays;
 

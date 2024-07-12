@@ -1,15 +1,15 @@
-package resolvers;
+package ui.resolvers;
 
-import annotations.PageObject;
+import ui.annotations.PageObject;
 import exceptions.CTAFException;
 import lombok.SneakyThrows;
 import org.reflections.Reflections;
-import pages.Page;
+import ui.pages.Page;
 
 public class PageResolver {
     @SneakyThrows
     public static Page resolve(String pageName) {
-        var reflections = new Reflections("pages");
+        var reflections = new Reflections("ui");
         var pageObjectClasses = reflections.getTypesAnnotatedWith(PageObject.class);
         var pageObjectClass = pageObjectClasses.stream()
                 .filter(clazz -> clazz.getAnnotation(PageObject.class).value().equals(pageName))

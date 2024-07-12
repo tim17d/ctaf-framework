@@ -23,7 +23,11 @@ dependencies {
     implementation("org.reflections:reflections:0.10.2")
     implementation("com.codeborne:selenide:7.1.0")
     implementation("io.rest-assured:rest-assured:5.4.0")
+    implementation("com.zaxxer:HikariCP:5.1.0")
     implementation("org.springframework:spring-jdbc:6.1.10")
+    /* H2 embedded database dependency is only for demo testing purpose.
+    You can delete it and add other necessary connectors, e.g. PostgresSQL, MySQL, etc. */
+    implementation("com.h2database:h2:2.2.224")
     implementation("ch.qos.logback:logback-core:1.5.0")
     implementation("ch.qos.logback:logback-classic:1.5.0")
     implementation(platform("io.qameta.allure:allure-bom:2.25.0"))
@@ -43,6 +47,7 @@ java {
 
 tasks.test {
     useJUnitPlatform()
+    systemProperty("env", project.findProperty("env") ?: "test")
     testLogging.exceptionFormat = TestExceptionFormat.FULL
     testLogging.showStandardStreams = true
     jvmArgs = listOf(

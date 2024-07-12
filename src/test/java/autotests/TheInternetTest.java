@@ -1,4 +1,4 @@
-package features;
+package autotests;
 
 import org.junit.jupiter.api.Test;
 import steps.CommonSteps;

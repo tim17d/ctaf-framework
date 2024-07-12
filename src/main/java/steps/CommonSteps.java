@@ -11,6 +11,6 @@ public class CommonSteps {
     @Step("Wait for {0} seconds")
     public void wait_for_seconds(int seconds) {
         Thread.sleep(seconds * 1000L);
-        log.info(cyan("Waiting for {} seconds"), seconds);
+        log.info(cyan("Wait for {} seconds"), seconds);
     }
 }

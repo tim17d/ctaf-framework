@@ -1,4 +1,4 @@
-package pages;
+package ui.pages;
 
 public interface Page {
     void check();

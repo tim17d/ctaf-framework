@@ -1,7 +1,7 @@
-package pages;
+package ui.pages;
 
-import annotations.Element;
-import annotations.PageObject;
+import ui.annotations.Element;
+import ui.annotations.PageObject;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
 import com.codeborne.selenide.SelenideElement;

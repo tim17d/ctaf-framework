@@ -6,9 +6,9 @@ import io.qameta.allure.Step;
 import static log_colors.Colors.cyan;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import pages.Page;
-import resolvers.ElementResolver;
-import resolvers.PageResolver;
+import ui.pages.Page;
+import ui.resolvers.ElementResolver;
+import ui.resolvers.PageResolver;
 
 import java.time.Duration;
 
