@@ -46,7 +46,12 @@ java {
 }
 
 tasks.test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        val tags = project.findProperty("tags") as String?
+        if (!tags.isNullOrEmpty()) {
+            includeTags(*tags.split(",").map { it.trim() }.toTypedArray())
+        }
+    }
     systemProperty("env", project.findProperty("env") ?: "test")
     testLogging.exceptionFormat = TestExceptionFormat.FULL
     testLogging.showStandardStreams = true

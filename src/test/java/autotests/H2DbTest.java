@@ -3,6 +3,7 @@ package autotests;
 import db.DatabaseConnectionPool;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -24,6 +25,7 @@ public class H2DbTest {
     }
 
     @Test
+    @Tag("db")
     public void testH2Db() {
         JdbcTemplate jdbcTemplate = connectionPool.getJdbcTemplate("testDB");
         jdbcTemplate.execute("CREATE TABLE test (id INT PRIMARY KEY, name VARCHAR(255))");

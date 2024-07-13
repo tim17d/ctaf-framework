@@ -1,5 +1,6 @@
 package autotests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import steps.CommonSteps;
 import steps.UiSteps;
@@ -9,6 +10,7 @@ public class TheInternetTest {
     UiSteps ui = new UiSteps("https://the-internet.herokuapp.com/");
 
     @Test
+    @Tag("ui")
     public void testAddRemoveElements() {
         ui.open_main_page();
         ui.current_page_is("Welcome to the-internet");
@@ -22,6 +24,7 @@ public class TheInternetTest {
     }
 
     @Test
+    @Tag("ui")
     public void testCheckboxes() {
         ui.open_main_page();
         ui.current_page_is("Welcome to the-internet");
