@@ -1,4 +1,4 @@
 package steps;
 
-public class DbSteps {
+public class DbSteps extends AbstractSteps {
 }

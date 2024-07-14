@@ -1,16 +1,13 @@
 package steps;
 
 import io.qameta.allure.Step;
-import static log_colors.Colors.cyan;
 import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
-public class CommonSteps {
+public class CommonSteps extends AbstractSteps {
     @SneakyThrows
     @Step("Wait for {0} seconds")
     public void wait_for_seconds(int seconds) {
         Thread.sleep(seconds * 1000L);
-        log.info(cyan("Wait for {} seconds"), seconds);
+        logStep("Wait for {} seconds", seconds);
     }
 }

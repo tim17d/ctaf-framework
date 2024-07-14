@@ -1,4 +1,4 @@
 package steps;
 
-public class ApiSteps {
+public class ApiSteps extends AbstractSteps {
 }
